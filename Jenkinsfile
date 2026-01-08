@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_HUB_REPO = 'moulashaik9618/microservices-ingress'
         K8S_CLUSTER_NAME = 'Shaik-Ecom-cluster'
-        AWS_REGION = 'eu-east-1'
+        AWS_REGION = 'us-east-1'
         NAMESPACE = 'default'
         APP_NAME = 'devopswithmoula'
     }
