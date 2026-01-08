@@ -133,21 +133,3 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            echo 'Cleaning up Docker images...'
-            sh "docker rmi ${DOCKER_HUB_REPO}:${env.IMAGE_TAG} || true"
-            sh "docker rmi ${DOCKER_HUB_REPO}:latest || true"
-        }
-
-        success {
-            echo 'Pipeline completed successfully!'
-            echo "Access your application at: ${env.INGRESS_URL}"
-        }
-
-        failure {
-            echo 'Pipeline failed! Please check the logs.'
-        }
-    }
-}
